@@ -1,0 +1,36 @@
+# Project-specific
+data/predictions/
+.github/
+venv/
+
+# Large data files (>50MB - GitHub limit is 100MB)
+data/raw/
+data/processed/train_data.json
+data/processed/test_data.json
+
+# SQLite databases (except the demo database)
+*.db
+!data/databases/fraud_detection_local.db
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
