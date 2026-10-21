@@ -1,0 +1,308 @@
+{
+  "version": 1,
+  "historyId": "0999d17a-b1c2-4705-867a-88178bbcfae8",
+  "currentRevision": "3fcf0526-edfd-440d-9dc0-fb503c9a8111",
+  "pendingChanges": false,
+  "files": {
+    "assets/img/fraud_web_app_logo.png": {
+      "hash": "f8f35d9032f92ce557f96b5dd1ce6e388e3b195c2b787cd9295ac2a819c47dd4",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/f8/f8f35d9032f92ce557f96b5dd1ce6e388e3b195c2b787cd9295ac2a819c47dd4"
+    },
+    "assets/sfx/impact/impactSoft_medium_000.ogg": {
+      "hash": "7d3ba0bb5e60a11b5d3e558c141303dcf494256675fbf753c0d252d2cf0481e3",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/7d/7d3ba0bb5e60a11b5d3e558c141303dcf494256675fbf753c0d252d2cf0481e3"
+    },
+    "assets/sfx/interface/click_001.ogg": {
+      "hash": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/cc/ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9"
+    },
+    "assets/sfx/interface/drop_001.ogg": {
+      "hash": "692ee3a6f1821402ca649ff735bee9591dc4846c8098fc7d6a90fd15fa57c1af",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/69/692ee3a6f1821402ca649ff735bee9591dc4846c8098fc7d6a90fd15fa57c1af"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/53/53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "bb9a6a774479a15d69705c4a6b93ccc11c8fecef60a06936715659927631dfcb",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/bb/bb9a6a774479a15d69705c4a6b93ccc11c8fecef60a06936715659927631dfcb"
+    },
+    "meta.json": {
+      "hash": "9c2d3e620783ff9222270989a01bb9fb96da40acb8d4d5a3990087b595f21c64",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/9c/9c2d3e620783ff9222270989a01bb9fb96da40acb8d4d5a3990087b595f21c64"
+    },
+    "package.json": {
+      "hash": "da904c166f721b0f80e49f9a899b6afdd676b320f10bcbccb39de85354d92f66",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/da/da904c166f721b0f80e49f9a899b6afdd676b320f10bcbccb39de85354d92f66"
+    },
+    "assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3": {
+      "hash": "5888d4bd2ba0119b87a94e502ae2cc401c08192945cc5e5c2f8e8a33aa47a0a1",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/58/5888d4bd2ba0119b87a94e502ae2cc401c08192945cc5e5c2f8e8a33aa47a0a1"
+    },
+    "assets/img/fraud_logo_outro.png": {
+      "hash": "f8f35d9032f92ce557f96b5dd1ce6e388e3b195c2b787cd9295ac2a819c47dd4",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/f8/f8f35d9032f92ce557f96b5dd1ce6e388e3b195c2b787cd9295ac2a819c47dd4"
+    },
+    "beats/assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3.json": {
+      "hash": "92dcca8d35264825ec952601c7f18d7e609d04a7dfdc202d82abee125085abf0",
+      "content": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/92/92dcca8d35264825ec952601c7f18d7e609d04a7dfdc202d82abee125085abf0"
+    }
+  },
+  "revisions": {
+    "39089eb5-3f00-477e-8f6a-aa64a403d118": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792575375860,
+      "endedAt": 1792575375861,
+      "files": {
+        "index.html": {
+          "before": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/35/35dae8d56861a034e9f938b8e88c6a2cf2532d6035b6a29c7a2cf189f2e7f6d9",
+          "after": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/7c/7ce232fa5550e2bc98bb7bab73a00cdc09a5621111cbc7b0bc5d1532207340a8"
+        }
+      }
+    },
+    "fb2dfe86-3950-428b-9a95-75baa6f8a873": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792576268851,
+      "endedAt": 1792576268853,
+      "files": {
+        "assets/img/fraud_logo_outro.png": {
+          "before": null,
+          "after": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/f8/f8f35d9032f92ce557f96b5dd1ce6e388e3b195c2b787cd9295ac2a819c47dd4"
+        },
+        "index.html": {
+          "before": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/7c/7ce232fa5550e2bc98bb7bab73a00cdc09a5621111cbc7b0bc5d1532207340a8",
+          "after": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/75/7580916153bb55ff02a8663c75e750ff2961afeaee3a49efde888c9e9cb6c51e"
+        }
+      }
+    },
+    "1a809c43-d759-4a65-b03d-f61d42c1d9a1": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792576387398,
+      "endedAt": 1792576387399,
+      "files": {
+        "index.html": {
+          "before": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/75/7580916153bb55ff02a8663c75e750ff2961afeaee3a49efde888c9e9cb6c51e",
+          "after": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/87/874f45c0e03dc5643f19c75425b8764671f20944e1e2ae367aa6018bf24ee266"
+        }
+      }
+    },
+    "c5f9399a-df62-4853-a970-2e0c3b0f1979": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792576513752,
+      "endedAt": 1792576513753,
+      "files": {
+        "index.html": {
+          "before": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/87/874f45c0e03dc5643f19c75425b8764671f20944e1e2ae367aa6018bf24ee266",
+          "after": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/bb/bb9a6a774479a15d69705c4a6b93ccc11c8fecef60a06936715659927631dfcb"
+        }
+      }
+    },
+    "3fcf0526-edfd-440d-9dc0-fb503c9a8111": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792576596816,
+      "endedAt": 1792576596817,
+      "files": {
+        "beats/assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3.json": {
+          "before": null,
+          "after": "/home/devx/.cache/hyperframes/history/0999d17a-b1c2-4705-867a-88178bbcfae8/blobs/92/92dcca8d35264825ec952601c7f18d7e609d04a7dfdc202d82abee125085abf0"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "ad2a9bba-093c-41e2-8df1-9b16d203f5d0"
+    },
+    "revisions": {
+      "39089eb5-3f00-477e-8f6a-aa64a403d118": [
+        {
+          "id": "d24bc71b-cb79-446b-9d80-7b85e3a8a85f",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792575386377,
+          "contentHash": "0df3248cce428184102b2730ba86012bf73e8d297d50082d6741e050472031eb",
+          "revision": "39089eb5-3f00-477e-8f6a-aa64a403d118",
+          "inputFingerprint": "cec4938c643d51b32684b2aedd5c43ec147a405428198e79342c195b6b036f36",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "58a8dc1b-7d24-46f2-9aad-b8e7f3a0bb77"
+        }
+      ],
+      "fb2dfe86-3950-428b-9a95-75baa6f8a873": [
+        {
+          "id": "614235ad-ca5d-497f-b549-51a142fa07a5",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792576274117,
+          "contentHash": "4de62db02c1e045d89787965044068f93ebe4a7315f94cf3a629280dd53f9824",
+          "revision": "fb2dfe86-3950-428b-9a95-75baa6f8a873",
+          "inputFingerprint": "859a070f4bf970e838eb6e0c9e4b304fa30891631118e7a8f610979483b659f5",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "58a8dc1b-7d24-46f2-9aad-b8e7f3a0bb77"
+        }
+      ],
+      "1a809c43-d759-4a65-b03d-f61d42c1d9a1": [
+        {
+          "id": "f6428d79-ad47-4e1a-99c7-9a23e84590ff",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792576392700,
+          "contentHash": "4de62db02c1e045d89787965044068f93ebe4a7315f94cf3a629280dd53f9824",
+          "revision": "1a809c43-d759-4a65-b03d-f61d42c1d9a1",
+          "inputFingerprint": "00feb1ddffc4e74afde6a86f8c4ffd1aafdf60dd55a700e326aaf86049c180e9",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "58a8dc1b-7d24-46f2-9aad-b8e7f3a0bb77"
+        }
+      ],
+      "c5f9399a-df62-4853-a970-2e0c3b0f1979": [
+        {
+          "id": "5b64af99-1093-45a6-9062-8bbb1f8f24cd",
+          "scope": "project",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 3000,
+              "contrast": true,
+              "strict": false,
+              "snapshots": false,
+              "browserGpuMode": "auto"
+            }
+          },
+          "createdAt": 1792576518478,
+          "contentHash": "e05c305ccf5f1e3ac766be07edb04e4879441958ecfc59a392a82f8735447c5b",
+          "revision": "c5f9399a-df62-4853-a970-2e0c3b0f1979",
+          "inputFingerprint": "26291d979b33e95e0b2702554e6f8a58b6ddd6cdba326bc03e2bc579917fad20",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "58a8dc1b-7d24-46f2-9aad-b8e7f3a0bb77"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "ad2a9bba-093c-41e2-8df1-9b16d203f5d0",
+        "scope": "project",
+        "report": "/home/devx/Development/Fraud_Detection/brag-output/composition/.hyperframes/artifacts/checks/ad2a9bba-093c-41e2-8df1-9b16d203f5d0.json",
+        "metadata": {
+          "ok": false,
+          "browserSkipped": true,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 3000,
+            "contrast": true,
+            "strict": false,
+            "snapshots": false,
+            "browserGpuMode": "auto"
+          }
+        },
+        "createdAt": 1792575183420,
+        "contentHash": "054f9bf6dc1de780b22155a86ede3a340ee8ea95ffabe9880111b66f3643acc9",
+        "revision": null,
+        "inputFingerprint": "ee3cf1791ef4933b1ebf504f60f0fa6673519fe9ef3488b419ab9477e5696d01",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "renders": {
+    "latest": {
+      "id": "58a8dc1b-7d24-46f2-9aad-b8e7f3a0bb77",
+      "completedAt": 1792576662195,
+      "output": "/home/devx/Development/Fraud_Detection/brag-output/brag.mp4",
+      "status": "completed",
+      "revision": "3fcf0526-edfd-440d-9dc0-fb503c9a8111"
+    },
+    "retainedRevisions": [
+      "3fcf0526-edfd-440d-9dc0-fb503c9a8111"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}

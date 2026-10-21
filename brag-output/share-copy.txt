@@ -1,0 +1,1 @@
+Introducing Fraud Detection: catching 92.9% of fraudulent event transactions using multi-pipeline NLP and dual-threshold classification. Real-time risk monitoring built with Python, Scikit-Learn, and Flask.

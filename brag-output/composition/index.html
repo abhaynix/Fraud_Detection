@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Fraud Detection Launch</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #080c14;
+        color: #f1f5f9;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      #root {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: radial-gradient(circle at 50% 15%, #131c2e 0%, #080c14 70%);
+      }
+
+      /* Subtle grid background */
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        background-size: 60px 60px;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        mask-image: radial-gradient(circle at 50% 45%, black 40%, transparent 80%);
+        pointer-events: none;
+      }
+
+      /* Ambient glow */
+      .ambient-glow {
+        position: absolute;
+        width: 800px;
+        height: 800px;
+        left: 140px;
+        top: 200px;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(56, 189, 248, 0) 70%);
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+      }
+
+      /* Common scene container */
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+        pointer-events: none;
+      }
+
+      .scene-content {
+        width: 100%;
+        height: 100%;
+        padding: 140px 80px 100px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Typography */
+      .tag-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 22px;
+        border-radius: 9999px;
+        background: rgba(56, 189, 248, 0.15);
+        border: 1px solid rgba(56, 189, 248, 0.4);
+        color: #38bdf8;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        align-self: flex-start;
+      }
+
+      .tag-pill .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #38bdf8;
+        box-shadow: 0 0 10px #38bdf8;
+      }
+
+      .tag-pill-danger {
+        background: rgba(239, 68, 68, 0.18);
+        border-color: rgba(239, 68, 68, 0.5);
+        color: #f87171;
+      }
+      .tag-pill-danger .dot {
+        background: #ef4444;
+        box-shadow: 0 0 10px #ef4444;
+      }
+
+      .headline {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        margin-top: 24px;
+      }
+
+      .subhead {
+        font-size: 28px;
+        line-height: 1.45;
+        color: #cbd5e1;
+        margin-top: 18px;
+        font-weight: 400;
+      }
+
+      /* ==================== SCENE 1 ==================== */
+      .stat-hero {
+        margin: auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .big-metric-card {
+        background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+        border: 1px solid rgba(56, 189, 248, 0.25);
+        border-radius: 28px;
+        padding: 48px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .big-metric-number {
+        font-size: 110px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #ffffff;
+        line-height: 1;
+      }
+
+      .big-metric-label {
+        font-size: 26px;
+        font-weight: 500;
+        color: #38bdf8;
+        margin-top: 12px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      .problem-banner {
+        background: rgba(239, 68, 68, 0.12);
+        border-left: 5px solid #ef4444;
+        border-radius: 0 18px 18px 0;
+        padding: 30px 36px;
+      }
+
+      .problem-banner-title {
+        color: #fca5a5;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .problem-banner-text {
+        font-size: 26px;
+        color: #f8fafc;
+        line-height: 1.4;
+      }
+
+      /* ==================== SCENE 2 ==================== */
+      .pipeline-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin: auto 0;
+      }
+
+      .pipe-card {
+        background: rgba(15, 23, 42, 0.85);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 20px;
+        padding: 32px 36px;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+      }
+
+      .pipe-badge {
+        width: 68px;
+        height: 68px;
+        border-radius: 16px;
+        background: rgba(56, 189, 248, 0.15);
+        border: 1px solid rgba(56, 189, 248, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: 700;
+        color: #38bdf8;
+        flex-shrink: 0;
+      }
+
+      .pipe-content {
+        flex: 1;
+      }
+
+      .pipe-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .pipe-desc {
+        font-size: 22px;
+        color: #cbd5e1;
+        margin-top: 6px;
+      }
+
+      .pipe-card.highlight {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(15, 23, 42, 0.95) 100%);
+        border: 1px solid rgba(239, 68, 68, 0.5);
+      }
+
+      .pipe-card.highlight .pipe-badge {
+        background: rgba(239, 68, 68, 0.2);
+        border-color: rgba(239, 68, 68, 0.6);
+        color: #ef4444;
+      }
+
+      /* ==================== SCENE 3 ==================== */
+      .app-frame {
+        background: #0f172a;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 28px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        margin: auto 0;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+      }
+
+      .app-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .app-brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .app-logo {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+      }
+
+      .app-name {
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .live-pill {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        color: #4ade80;
+        background: rgba(74, 222, 128, 0.15);
+        border: 1px solid rgba(74, 222, 128, 0.35);
+        padding: 6px 16px;
+        border-radius: 999px;
+      }
+
+      .live-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #4ade80;
+        box-shadow: 0 0 8px #4ade80;
+      }
+
+      /* 3 Risk summary cards */
+      .risk-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+      }
+
+      .risk-stat-card {
+        border-radius: 18px;
+        padding: 24px 16px;
+        text-align: center;
+        border: 1px solid transparent;
+      }
+
+      .risk-stat-low {
+        background: rgba(34, 197, 94, 0.14);
+        border-color: rgba(34, 197, 94, 0.35);
+      }
+      .risk-stat-low .stat-val { color: #4ade80; }
+
+      .risk-stat-med {
+        background: rgba(245, 158, 11, 0.14);
+        border-color: rgba(245, 158, 11, 0.35);
+      }
+      .risk-stat-med .stat-val { color: #fbbf24; }
+
+      .risk-stat-high {
+        background: rgba(239, 68, 68, 0.16);
+        border-color: rgba(239, 68, 68, 0.45);
+      }
+      .risk-stat-high .stat-val { color: #f87171; }
+
+      .stat-val {
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .stat-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: #f1f5f9;
+        margin-top: 8px;
+      }
+
+      .stat-pct {
+        font-size: 16px;
+        color: #cbd5e1;
+        margin-top: 4px;
+      }
+
+      /* Stream table row */
+      .table-card {
+        background: rgba(30, 41, 59, 0.65);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        padding: 24px;
+      }
+
+      .table-row-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+      }
+
+      .record-id {
+        font-family: monospace;
+        font-size: 22px;
+        font-weight: 700;
+        color: #38bdf8;
+      }
+
+      .record-loc {
+        font-size: 20px;
+        font-weight: 500;
+        color: #f1f5f9;
+      }
+
+      .table-row-metrics {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .metric-item {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .metric-item-lbl {
+        font-size: 16px;
+        color: #cbd5e1;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .metric-item-val {
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .prob-danger {
+        color: #f87171 !important;
+      }
+
+      .table-row-action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 18px;
+      }
+
+      .risk-badge-high {
+        background: #dc2626;
+        color: #ffffff;
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .action-btns {
+        display: flex;
+        gap: 8px;
+      }
+
+      .action-btn {
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+        background: #1e293b;
+      }
+
+      .action-btn.active-flagged {
+        background: #ef4444;
+        border-color: #ef4444;
+        color: #ffffff;
+        font-weight: 700;
+      }
+
+      /* ==================== SCENE 4 ==================== */
+      .payoff-container {
+        margin: auto 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 32px;
+      }
+
+      .grand-metric {
+        font-size: 160px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 0.95;
+        background: linear-gradient(135deg, #ffffff 40%, #38bdf8 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .grand-label {
+        font-size: 36px;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .proof-card {
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(56, 189, 248, 0.25);
+        border-radius: 20px;
+        padding: 28px 40px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .proof-sub {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .proof-num {
+        font-size: 40px;
+        font-weight: 800;
+        color: #38bdf8;
+      }
+
+      .proof-txt {
+        font-size: 18px;
+        color: #cbd5e1;
+        font-weight: 500;
+      }
+
+      .brand-outro {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 10px;
+      }
+
+      .brand-logo-large {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+      }
+
+      .brand-info {
+        text-align: left;
+      }
+
+      .brand-title {
+        font-size: 34px;
+        font-weight: 800;
+        color: #ffffff;
+      }
+
+      .brand-stack {
+        font-size: 20px;
+        font-weight: 500;
+        color: #cbd5e1;
+        margin-top: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="root"
+      data-start="0"
+      data-duration="19"
+      data-width="1080"
+      data-height="1920"
+    >
+      <!-- Background elements -->
+      <div class="bg-grid"></div>
+      <div class="ambient-glow" id="ambientGlow"></div>
+
+      <!-- AUDIO TRACKS -->
+      <!-- Music bed (steady polished tempo 109.96 bpm) -->
+      <audio
+        id="bg-music"
+        class="clip"
+        data-start="0"
+        data-duration="19"
+        data-track-index="10"
+        data-volume="0.32"
+        data-fade-out="1"
+        src="assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3"
+      ></audio>
+
+      <!-- SFX 1: Pipeline node lock at 8.74s (strong cue) -->
+      <audio
+        id="sfx-1"
+        class="clip"
+        data-start="8.70"
+        data-duration="0.11"
+        data-track-index="11"
+        data-volume="0.55"
+        src="assets/sfx/interface/drop_001.ogg"
+      ></audio>
+
+      <!-- SFX 2: Status Flagged button click at 13.11s (strong cue) -->
+      <audio
+        id="sfx-2"
+        class="clip"
+        data-start="13.08"
+        data-duration="0.10"
+        data-track-index="12"
+        data-volume="0.65"
+        src="assets/sfx/interface/click_001.ogg"
+      ></audio>
+
+      <!-- SFX 3: 92.9% Recall Payoff impact at 17.47s (strong cue) -->
+      <audio
+        id="sfx-3"
+        class="clip"
+        data-start="17.44"
+        data-duration="0.12"
+        data-track-index="13"
+        data-volume="0.60"
+        src="assets/sfx/impact/impactSoft_medium_000.ogg"
+      ></audio>
+
+      <!-- ================= SCENE 1 (0.0s - 4.0s) ================= -->
+      <div id="scene-1" class="scene clip" data-start="0" data-duration="4">
+        <div class="scene-content" id="scene-content-1">
+          <div>
+            <div class="tag-pill">
+              <span class="dot"></span>
+              Event Security Intelligence
+            </div>
+            <h1 class="headline">Global Event<br />Transactions</h1>
+            <p class="subhead">Monitoring financial streams in real time.</p>
+          </div>
+
+          <div class="stat-hero">
+            <div class="big-metric-card" id="card-records">
+              <div class="big-metric-number" id="metric-records">14,337</div>
+              <div class="big-metric-label">Historical Records Analyzed</div>
+            </div>
+
+            <div class="problem-banner" id="banner-risk">
+              <div class="problem-banner-title">The Operational Challenge</div>
+              <div class="problem-banner-text">
+                9.1% overall fraud rate across international venues. Conventional single-model systems miss critical patterns.
+              </div>
+            </div>
+          </div>
+
+          <div></div>
+        </div>
+      </div>
+
+      <!-- ================= SCENE 2 (4.0s - 9.0s) ================= -->
+      <div id="scene-2" class="scene clip" data-start="4" data-duration="5">
+        <div class="scene-content" id="scene-content-2">
+          <div>
+            <div class="tag-pill">
+              <span class="dot"></span>
+              Machine Learning Engine
+            </div>
+            <h1 class="headline">Multi-Stage<br />Prediction Pipeline</h1>
+            <p class="subhead">Natural language processing meets ensemble trees.</p>
+          </div>
+
+          <div class="pipeline-stack">
+            <div class="pipe-card" id="pipe-nlp">
+              <div class="pipe-badge">01</div>
+              <div class="pipe-content">
+                <div class="pipe-title">4 NLP Text Pipelines</div>
+                <div class="pipe-desc">Extracting fraud signals from event & org descriptions</div>
+              </div>
+            </div>
+
+            <div class="pipe-card" id="pipe-rf">
+              <div class="pipe-badge">02</div>
+              <div class="pipe-content">
+                <div class="pipe-title">Random Forest Classifier</div>
+                <div class="pipe-desc">Trained on chronological splits to prevent data leakage</div>
+              </div>
+            </div>
+
+            <div class="pipe-card highlight" id="pipe-thresh">
+              <div class="pipe-badge">03</div>
+              <div class="pipe-content">
+                <div class="pipe-title">0.03 Effective Threshold</div>
+                <div class="pipe-desc">Dual-threshold strategy tuned for maximum recall</div>
+              </div>
+            </div>
+          </div>
+
+          <div></div>
+        </div>
+      </div>
+
+      <!-- ================= SCENE 3 (9.0s - 15.0s) ================= -->
+      <div id="scene-3" class="scene clip" data-start="9" data-duration="6">
+        <div class="scene-content" id="scene-content-3">
+          <div>
+            <div class="tag-pill">
+              <span class="dot"></span>
+              Live Monitoring Console
+            </div>
+            <h1 class="headline">Real-Time Triage &<br />Analyst Workflow</h1>
+            <p class="subhead">Immediate scoring with instant action buttons.</p>
+          </div>
+
+          <div class="app-frame" id="app-console">
+            <!-- Webapp header -->
+            <div class="app-header">
+              <div class="app-brand">
+                <img src="assets/img/fraud_web_app_logo.png" alt="Console Logo" class="app-logo" id="logo-console" />
+                <div class="app-name">Fraud Detection Console</div>
+              </div>
+              <div class="live-pill">
+                <span class="live-dot"></span>
+                2,868 Records
+              </div>
+            </div>
+
+            <!-- 3 Risk distribution cards from home.html -->
+            <div class="risk-grid">
+              <div class="risk-stat-card risk-stat-low" id="card-low">
+                <div class="stat-val">2,149</div>
+                <div class="stat-name">Low Risk</div>
+                <div class="stat-pct">74.9%</div>
+              </div>
+              <div class="risk-stat-card risk-stat-med" id="card-med">
+                <div class="stat-val">176</div>
+                <div class="stat-name">Medium Risk</div>
+                <div class="stat-pct">6.1%</div>
+              </div>
+              <div class="risk-stat-card risk-stat-high" id="card-high">
+                <div class="stat-val">543</div>
+                <div class="stat-name">High Risk</div>
+                <div class="stat-pct">18.9%</div>
+              </div>
+            </div>
+
+            <!-- Live scored transaction table row -->
+            <div class="table-card" id="table-row">
+              <div class="table-row-top">
+                <span class="record-id">ID: #7210239</span>
+                <span class="record-loc">Country: Morocco (MA)</span>
+              </div>
+              <div class="table-row-metrics">
+                <div class="metric-item">
+                  <span class="metric-item-lbl">Total Value</span>
+                  <span class="metric-item-val">$1,250.00</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-item-lbl">Fraud Prob</span>
+                  <span class="metric-item-val prob-danger" id="prob-num">98.4%</span>
+                </div>
+                <div class="metric-item">
+                  <span class="metric-item-lbl">Classification</span>
+                  <span class="risk-badge-high">HIGH RISK</span>
+                </div>
+              </div>
+              <div class="table-row-action">
+                <span class="metric-item-lbl">Review Action:</span>
+                <div class="action-btns">
+                  <span class="action-btn" id="btn-pending">Pending</span>
+                  <span class="action-btn" id="btn-reviewed">Reviewed</span>
+                  <span class="action-btn active-flagged" id="btn-flagged">Flagged</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div></div>
+        </div>
+      </div>
+
+      <!-- ================= SCENE 4 (15.0s - 19.0s) ================= -->
+      <div id="scene-4" class="scene clip" data-start="15" data-duration="4">
+        <div class="scene-content" id="scene-content-4">
+          <div>
+            <div class="tag-pill tag-pill-danger">
+              <span class="dot"></span>
+              Performance Benchmark
+            </div>
+          </div>
+
+          <div class="payoff-container">
+            <div class="grand-metric" id="payoff-metric">92.9%</div>
+            <div class="grand-label" id="payoff-label">Fraud Detection Recall</div>
+
+            <div class="proof-card" id="proof-card">
+              <div class="proof-sub">
+                <div class="proof-num">118 / 127</div>
+                <div class="proof-txt">Fraud Cases Detected</div>
+              </div>
+              <div class="proof-sub">
+                <div class="proof-num">0.03</div>
+                <div class="proof-txt">Optimized Threshold</div>
+              </div>
+            </div>
+
+            <div class="brand-outro" id="brand-outro">
+              <img src="assets/img/fraud_logo_outro.png" alt="Brand Logo" class="brand-logo-large" id="logo-outro" />
+              <div class="brand-info">
+                <div class="brand-title">Fraud Detection</div>
+                <div class="brand-stack">Python · Scikit-Learn · Flask</div>
+              </div>
+            </div>
+          </div>
+
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GSAP Master Timeline -->
+    <script>
+      const tl = gsap.timeline({ paused: true });
+
+      // Ambient glow breathing (subtle audio-reactive emulation)
+      tl.to("#ambientGlow", {
+        scale: 1.15,
+        opacity: 0.8,
+        duration: 3,
+        repeat: 5,
+        yoyo: true,
+        ease: "sine.inOut"
+      }, 0);
+
+      /* ================= SCENE 1 (0.0s - 4.0s) ================= */
+      tl.fromTo("#scene-content-1", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0.1);
+      tl.fromTo("#card-records", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power2.out" }, 0.5);
+      tl.fromTo("#banner-risk", { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 1.4);
+      tl.to("#scene-content-1", { opacity: 0, duration: 0.4, ease: "power2.in" }, 3.5);
+
+      /* ================= SCENE 2 (4.0s - 9.0s) ================= */
+      tl.fromTo("#scene-content-2", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 4.1);
+      
+      // Sequential pipeline card reveals snapped to beat grid
+      // beat 5.34s
+      tl.fromTo("#pipe-nlp", { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 5.2);
+      // beat 6.56s
+      tl.fromTo("#pipe-rf", { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 6.5);
+      // beat-locked: 8.74s (strong cue)
+      tl.fromTo("#pipe-thresh", { scale: 0.94, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "back.out(1.4)" }, 8.6);
+      
+      tl.to("#scene-content-2", { opacity: 0, duration: 0.4, ease: "power2.in" }, 8.5);
+
+      /* ================= SCENE 3 (9.0s - 15.0s) ================= */
+      tl.fromTo("#scene-content-3", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 9.1);
+
+      // App frame entrance
+      tl.fromTo("#app-console", { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power2.out" }, 9.3);
+
+      // beat-grid: 9.83s, 10.37s, 10.93s risk cards settle
+      tl.fromTo("#card-low", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 9.8);
+      tl.fromTo("#card-med", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 10.3);
+      tl.fromTo("#card-high", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "power2.out" }, 10.9);
+
+      // Table row arrival
+      tl.fromTo("#table-row", { opacity: 0, scale: 0.97 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power2.out" }, 11.5);
+
+      // Initial state of buttons before click
+      tl.set("#btn-flagged", { backgroundColor: "#1e293b", color: "#ffffff", boxShadow: "none" }, 9.0);
+      tl.set("#btn-pending", { backgroundColor: "rgba(56, 189, 248, 0.25)", color: "#38bdf8" }, 9.0);
+
+      // beat-locked: 13.11s (strong cue) — Simulated Status Action: Toggling to FLAGGED
+      tl.to("#btn-pending", { backgroundColor: "#1e293b", color: "#ffffff", duration: 0.1 }, 13.08);
+      tl.to("#btn-flagged", {
+        backgroundColor: "#ef4444",
+        borderColor: "#ef4444",
+        color: "#ffffff",
+        boxShadow: "0 0 16px rgba(239, 68, 68, 0.7)",
+        scale: 1.08,
+        duration: 0.18,
+        yoyo: true,
+        repeat: 1,
+        ease: "power2.out"
+      }, 13.11);
+      tl.to("#table-row", {
+        backgroundColor: "rgba(239, 68, 68, 0.18)",
+        borderColor: "#ef4444",
+        boxShadow: "0 0 30px rgba(239, 68, 68, 0.35)",
+        duration: 0.25
+      }, 13.11);
+
+      tl.to("#scene-content-3", { opacity: 0, duration: 0.4, ease: "power2.in" }, 14.5);
+
+      /* ================= SCENE 4 (15.0s - 19.0s) ================= */
+      tl.fromTo("#scene-content-4", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, 15.1);
+
+      // Payoff metric entrance
+      tl.fromTo("#payoff-metric", { scale: 0.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power3.out" }, 15.3);
+      tl.fromTo("#payoff-label", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }, 15.7);
+
+      // beat-locked: 17.47s (strong cue) — proof card & brand impact
+      tl.fromTo("#proof-card", { y: 25, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power2.out" }, 16.5);
+      tl.fromTo("#brand-outro", { scale: 0.95, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "power2.out" }, 17.47);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["root"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
